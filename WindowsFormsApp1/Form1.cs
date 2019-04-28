@@ -14,13 +14,14 @@ namespace WindowsFormsApp1
     {
         //***Данные***//
         private static bool[] _Table;
-        private const int CHUNCKSIZE = 2;
+        private int CHUNCKSIZE = 2;
 
         //***Служебные методы***//
         public Form1()
         {
             InitializeComponent();
             InititializeTable();
+            cb_ChunkSize.SelectedIndex = 0;
         }
         private void InititializeTable()
         {
@@ -65,12 +66,24 @@ namespace WindowsFormsApp1
         //***События***//
         private void b_do_Click(object sender, EventArgs e)
         {
+            
+            if(tb_original.TextLength == 0 || tb_compare.TextLength == 0)
+            {
+                l_PercentOfCoince.Text = "Недостаточно текста!";
+                return;
+            }
+            
+            
             //ПОДГОТОВКА ИСХОДНОГО ТЕКСТА(Надо проверить на то что текст вообще есть)
             String Original = Сanonize(tb_original.Text); //Канонизация
             Original = string.Join("`", Original.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
             String[] arWordsOriginal = new String[Original.Length];
             arWordsOriginal = Original.Split('`'); //Разбиение текста на слова
-
+            if(arWordsOriginal.Length<CHUNCKSIZE)
+            {
+                l_PercentOfCoince.Text = "Недостаточно текста!";
+                return;
+            }
             String[] arShinglesOriginal = new String[arWordsOriginal.Length - CHUNCKSIZE + 1];
             SplitIntoShingles(ref arShinglesOriginal, ref arWordsOriginal, CHUNCKSIZE); //Разбиение текста на шинглы
 
@@ -80,7 +93,11 @@ namespace WindowsFormsApp1
             Compare = string.Join("`", Compare.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
             String[] arWordsCompare = new String[Compare.Length];
             arWordsCompare = Compare.Split('`'); //Разбиение текста на слова
-
+            if (arWordsCompare.Length < CHUNCKSIZE)
+            {
+                l_PercentOfCoince.Text = "Недостаточно текста!";
+                return;
+            }
             String[] arShinglesCompare = new String[arWordsCompare.Length - CHUNCKSIZE + 1];
             SplitIntoShingles(ref arShinglesCompare, ref arWordsCompare, CHUNCKSIZE); //Разбиение текста на шинглы
 
@@ -100,6 +117,28 @@ namespace WindowsFormsApp1
             l_PercentOfCoince.Text = PercentOfCoincidence.ToString("N2");
             l_PercentOfCoince.Text += '%';
 
+        }
+
+        private void cb_ChunkSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(cb_ChunkSize.Text)
+            {
+                case "2":
+                    CHUNCKSIZE = 2;
+                    break;
+                case "4":
+                    CHUNCKSIZE = 4;
+                    break;
+                case "6":
+                    CHUNCKSIZE = 6;
+                    break;
+                case "8":
+                    CHUNCKSIZE = 8;
+                    break;
+                default:
+                    CHUNCKSIZE = 2;
+                    break;
+            }
         }
     }
 }

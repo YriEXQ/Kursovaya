@@ -35,7 +35,8 @@
             this.l_PercentOfCoince = new System.Windows.Forms.Label();
             this.tb_original = new System.Windows.Forms.TextBox();
             this.tb_compare = new System.Windows.Forms.TextBox();
-           
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_ChunkSize = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // l_original
@@ -58,7 +59,7 @@
             // 
             // b_do
             // 
-            this.b_do.Location = new System.Drawing.Point(197, 255);
+            this.b_do.Location = new System.Drawing.Point(12, 276);
             this.b_do.Name = "b_do";
             this.b_do.Size = new System.Drawing.Size(75, 23);
             this.b_do.TabIndex = 3;
@@ -69,11 +70,11 @@
             // l_TextOfPercent
             // 
             this.l_TextOfPercent.AutoSize = true;
-            this.l_TextOfPercent.Location = new System.Drawing.Point(9, 260);
+            this.l_TextOfPercent.Location = new System.Drawing.Point(12, 260);
             this.l_TextOfPercent.Name = "l_TextOfPercent";
-            this.l_TextOfPercent.Size = new System.Drawing.Size(113, 13);
+            this.l_TextOfPercent.Size = new System.Drawing.Size(116, 13);
             this.l_TextOfPercent.TabIndex = 4;
-            this.l_TextOfPercent.Text = "Процент совпадений";
+            this.l_TextOfPercent.Text = "Процент совпадений:";
             // 
             // l_PercentOfCoince
             // 
@@ -102,13 +103,39 @@
             this.tb_compare.Size = new System.Drawing.Size(260, 97);
             this.tb_compare.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(93, 281);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Размер Шингла:";
+            // 
+            // cb_ChunkSize
+            // 
+            this.cb_ChunkSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_ChunkSize.FormattingEnabled = true;
+            this.cb_ChunkSize.Items.AddRange(new object[] {
+            "2",
+            "4",
+            "6",
+            "8"});
+            this.cb_ChunkSize.Location = new System.Drawing.Point(190, 275);
+            this.cb_ChunkSize.Name = "cb_ChunkSize";
+            this.cb_ChunkSize.Size = new System.Drawing.Size(82, 21);
+            this.cb_ChunkSize.TabIndex = 5;
+            this.cb_ChunkSize.SelectedIndexChanged += new System.EventHandler(this.cb_ChunkSize_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(284, 295);
+            this.ClientSize = new System.Drawing.Size(284, 308);
+            this.Controls.Add(this.cb_ChunkSize);
             this.Controls.Add(this.l_PercentOfCoince);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.l_TextOfPercent);
             this.Controls.Add(this.b_do);
             this.Controls.Add(this.l_compare);
@@ -130,6 +157,8 @@
         private System.Windows.Forms.Label l_PercentOfCoince;
         private System.Windows.Forms.TextBox tb_original = new System.Windows.Forms.TextBox();
         private System.Windows.Forms.TextBox tb_compare = new System.Windows.Forms.TextBox();
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cb_ChunkSize;
     }
 }
 
