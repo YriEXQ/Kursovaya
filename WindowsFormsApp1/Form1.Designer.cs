@@ -27,7 +27,15 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {    
+        {
+            this.l_original = new System.Windows.Forms.Label();
+            this.l_compare = new System.Windows.Forms.Label();
+            this.b_do = new System.Windows.Forms.Button();
+            this.l_TextOfPercent = new System.Windows.Forms.Label();
+            this.l_PercentOfCoince = new System.Windows.Forms.Label();
+            this.tb_original = new System.Windows.Forms.TextBox();
+            this.tb_compare = new System.Windows.Forms.TextBox();
+           
             this.SuspendLayout();
             // 
             // l_original
@@ -115,11 +123,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label l_original = new System.Windows.Forms.Label();
-        private System.Windows.Forms.Label l_compare = new System.Windows.Forms.Label();
-        private System.Windows.Forms.Button b_do = new System.Windows.Forms.Button();
-        private System.Windows.Forms.Label l_TextOfPercent = new System.Windows.Forms.Label();
-        private System.Windows.Forms.Label l_PercentOfCoince = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Label l_original;
+        private System.Windows.Forms.Label l_compare;
+        private System.Windows.Forms.Button b_do;
+        private System.Windows.Forms.Label l_TextOfPercent;
+        private System.Windows.Forms.Label l_PercentOfCoince;
         private System.Windows.Forms.TextBox tb_original = new System.Windows.Forms.TextBox();
         private System.Windows.Forms.TextBox tb_compare = new System.Windows.Forms.TextBox();
     }
