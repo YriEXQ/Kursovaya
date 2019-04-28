@@ -27,33 +27,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
-            this.tb_original = new System.Windows.Forms.TextBox();
-            this.tb_compare = new System.Windows.Forms.TextBox();
-            this.l_original = new System.Windows.Forms.Label();
-            this.l_compare = new System.Windows.Forms.Label();
-            this.b_do = new System.Windows.Forms.Button();
-            this.l_TextOfPercent = new System.Windows.Forms.Label();
-            this.l_PercentOfCoince = new System.Windows.Forms.Label();
+        {    
             this.SuspendLayout();
-            // 
-            // tb_original
-            // 
-            this.tb_original.Location = new System.Drawing.Point(12, 25);
-            this.tb_original.MaxLength = 1073741824;
-            this.tb_original.Multiline = true;
-            this.tb_original.Name = "tb_original";
-            this.tb_original.Size = new System.Drawing.Size(260, 97);
-            this.tb_original.TabIndex = 0;
-            // 
-            // tb_compare
-            // 
-            this.tb_compare.Location = new System.Drawing.Point(12, 152);
-            this.tb_compare.MaxLength = 1073741824;
-            this.tb_compare.Multiline = true;
-            this.tb_compare.Name = "tb_compare";
-            this.tb_compare.Size = new System.Drawing.Size(260, 97);
-            this.tb_compare.TabIndex = 0;
             // 
             // l_original
             // 
@@ -101,6 +76,24 @@
             this.l_PercentOfCoince.TabIndex = 4;
             this.l_PercentOfCoince.Text = " ";
             // 
+            // tb_original
+            // 
+            this.tb_original.Location = new System.Drawing.Point(12, 25);
+            this.tb_original.MaxLength = 1073741824;
+            this.tb_original.Multiline = true;
+            this.tb_original.Name = "tb_original";
+            this.tb_original.Size = new System.Drawing.Size(260, 97);
+            this.tb_original.TabIndex = 0;
+            // 
+            // tb_compare
+            // 
+            this.tb_compare.Location = new System.Drawing.Point(12, 152);
+            this.tb_compare.MaxLength = 1073741824;
+            this.tb_compare.Multiline = true;
+            this.tb_compare.Name = "tb_compare";
+            this.tb_compare.Size = new System.Drawing.Size(260, 97);
+            this.tb_compare.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,14 +115,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tb_original;
-        private System.Windows.Forms.TextBox tb_compare;
-        private System.Windows.Forms.Label l_original;
-        private System.Windows.Forms.Label l_compare;
-        private System.Windows.Forms.Button b_do;
-        private System.Windows.Forms.Label l_TextOfPercent;
-        private System.Windows.Forms.Label l_PercentOfCoince;
+        private System.Windows.Forms.Label l_original = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Label l_compare = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Button b_do = new System.Windows.Forms.Button();
+        private System.Windows.Forms.Label l_TextOfPercent = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Label l_PercentOfCoince = new System.Windows.Forms.Label();
+        private System.Windows.Forms.TextBox tb_original = new System.Windows.Forms.TextBox();
+        private System.Windows.Forms.TextBox tb_compare = new System.Windows.Forms.TextBox();
     }
 }
 
