@@ -180,7 +180,6 @@ namespace Kursach
         private void b_AddFiles_Click(object sender, EventArgs e)
         {
             //=======Запускаем диалог для выбора папки=======//
-            OpenFileDialog ofd = new OpenFileDialog();
             string path = "";
             using (var dialog = new FolderBrowserDialog())
                 if (dialog.ShowDialog() == DialogResult.OK)
