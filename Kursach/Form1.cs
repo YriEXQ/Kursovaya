@@ -165,7 +165,7 @@ namespace Kursach
                     }
                 }
                 //Иначе вывподим ошибку
-                else MessageBox.Show($"Недостаточно текста в файле {lb_Files.Items[i].ToString()}", "Ошибка",
+                else if(PercentResult == -1) MessageBox.Show($"Недостаточно текста в файле {lb_Files.Items[i].ToString()}", "Ошибка",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
